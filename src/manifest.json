@@ -1,0 +1,17 @@
+{
+    "name": "ArtscapeToNotion",
+    "version": "1.0.0",
+    "permissions": ["https://api.notion.com/*"],
+    "background": {
+      "scripts": ["scripts/background.js"],
+      "persistent": false
+    },
+    "manifest_version": 2,
+    "description": "Register exhibition schedule to Notion",
+    "content_scripts": [{
+      "matches": ["https://artscape.jp/exhibition/schedule/*"],
+      "js": [
+        "scripts/content.js"
+      ]
+    }]
+  }
