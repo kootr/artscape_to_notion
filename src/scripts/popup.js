@@ -24,9 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     inputElementDb.value = '';
   });
-
+  
+  // 保存されている値を表示する
   chrome.storage.local.get(['ApiKey', 'DBID'], (result) => {
-    savedInputApi.textContent = result.ApiKey || '';
-    savedInputDb.textContent = result.DBID || '';
+    savedInputApi.textContent = '*****' + result.ApiKey.slice(-5,) || '';
+    savedInputDb.textContent = '*****' + result.DBID.slice(-5,) || '';
   });
 });
