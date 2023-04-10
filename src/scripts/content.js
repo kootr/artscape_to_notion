@@ -1,3 +1,11 @@
+chrome.storage.local.get(['ApiKey', 'DBID'], (result) => {
+  NOTION_TOKEN = result.ApiKey || '';
+  DATABASE_ID = result.DBID || '';
+  console.log(NOTION_TOKEN);
+  console.log(DATABASE_ID);
+  // TODO: 値がストレージに保存されていない場合はエラーメッセージを表示し、保存されている場合はmain関数をここで実行する
+});
+
 function main() {
   let exhibitions = document.querySelectorAll("div.exhiBody");
 
