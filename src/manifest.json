@@ -1,7 +1,7 @@
 {
     "name": "ArtscapeToNotion",
     "version": "1.0.0",
-    "permissions": ["https://api.notion.com/*"],
+    "permissions": ["https://api.notion.com/*", "storage"],
     "background": {
       "scripts": ["scripts/background.js"],
       "persistent": false
@@ -13,5 +13,8 @@
       "js": [
         "scripts/content.js"
       ]
-    }]
+    }],
+    "browser_action": {
+      "default_popup": "popup.html"
+    }
   }
