@@ -39,18 +39,17 @@ function main() {
 }
 
 function formatDate(Date) {
-  // const str = "2023年02月11日～2023年05月06日（予約制）"; Date の example
-  const startdate_startindex = Date.indexOf("2"); // 西暦2XXX年代
-  const startdate_endindex = Date.indexOf("日") + 1;
-  const enddate_startindex = Date.indexOf("日") + 2;
-  const enddate_endindex = Date.lastIndexOf("日") + 1;
-
-  startdate = Date.substring(startdate_startindex, startdate_endindex);
-  enddate = Date.substring(enddate_startindex, enddate_endindex);
-
-  let formattedStartDate = startdate.replace(/年|月/g, "-").replace(/日/, "");
-  let formattedEndDate = enddate.replace(/年|月/g, "-").replace(/日/, "");
-  return [formattedStartDate, formattedEndDate];
+  // const Date = "2023年02月11日～2023年05月06日（予約制）"; Example 1
+  // const Date = "2023年2月1日(日)～2023年5月6日(日)"; Example 2
+  var RawDates = Date.match(/(\d{4}年\d{1,2}月\d{1,2}日)/g);
+  
+  var formattedDates = RawDates.map(dateString => {
+    return dateString.replace(/(\d{4})年(\d{1,2})月(\d{1,2})日/, (match, year, month, day) => {
+      return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    });
+  });
+  
+  return formattedDates; // [2023-02-01, 2023-05-06]
 }
 
 async function addItem(title, museum, Date) {
