@@ -9,13 +9,14 @@
 ## How to Use
 1. このレポジトリをクローンする。
 1. Chrome の拡張機能に登録する。([Ref](https://support.google.com/chrome/a/answer/2714278?hl=ja))
-1. テンプレートのデータベースを複製する。：　追記予定
+1. データベースのテンプレートを自分のNotionページに複製する。：[テンプレート](https://sudsy-birthday-2d0.notion.site/335ae1f69f0c4a9888f7da44927617e5?v=b9fc171fd0f94f4b9d6f9cf215747516)
 1. 拡張機能のアイコンをクリックしてNOTIONのTOKEN情報と、Database ID を登録する。 
-    1. TOKEN情報の取得: 追記予定
-    1. Database ID の取得: 追記予定
-1. artscape (https://artscape.jp/) の展覧会情報ページにアクセスする。
+![App image](images/popup.png)
+    1. TOKEN情報の取得方法: 追記予定
+    1. Database ID の取得方法: 追記予定
+1. artscape の展覧会情報ページ(https://artscape.jp/exhibition/schedule/ 以下)にアクセスする。
 1. Notionに登録したい展覧会の「Notion登録」 ボタンをクリックする。
 
 ## 注意
-- Notionデータベースの列情報を変更すると動作しなくなる可能性があります。
-- artscape (https://artscape.jp/)  のHTML構造が変更されると動作しなくなる可能性があります。
+- テンプレートのデータベースの列情報をカスタムすると正常に動作しなくなる可能性があります。
+- artscape (https://artscape.jp/) のHTML構造が変更されると動作しなくなる可能性があります。

@@ -1,6 +1,6 @@
-chrome.storage.local.get(['ApiKey', 'DBID'], (result) => {
-  NOTION_TOKEN = result.ApiKey || '';
-  DATABASE_ID = result.DBID || '';
+chrome.storage.local.get(["ApiKey", "DBID"], (result) => {
+  NOTION_TOKEN = result.ApiKey || "";
+  DATABASE_ID = result.DBID || "";
   console.log(NOTION_TOKEN);
   console.log(DATABASE_ID);
   // TODO: 値がストレージに保存されていない場合はエラーメッセージを表示し、保存されている場合はmain関数をここで実行する
@@ -42,13 +42,18 @@ function formatDate(Date) {
   // const Date = "2023年02月11日～2023年05月06日（予約制）"; Example 1
   // const Date = "2023年2月1日(日)～2023年5月6日(日)"; Example 2
   var RawDates = Date.match(/(\d{4}年\d{1,2}月\d{1,2}日)/g);
-  
-  var formattedDates = RawDates.map(dateString => {
-    return dateString.replace(/(\d{4})年(\d{1,2})月(\d{1,2})日/, (match, year, month, day) => {
-      return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-    });
+
+  var formattedDates = RawDates.map((dateString) => {
+    return dateString.replace(
+      /(\d{4})年(\d{1,2})月(\d{1,2})日/,
+      (match, year, month, day) => {
+        return `${year}-${String(month).padStart(2, "0")}-${String(
+          day
+        ).padStart(2, "0")}`;
+      }
+    );
   });
-  
+
   return formattedDates; // [2023-02-01, 2023-05-06]
 }
 
