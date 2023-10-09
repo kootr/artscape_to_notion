@@ -1,6 +1,6 @@
 ## ArtScapeToNotion
 - 美術展情報サイト artscape (https://artscape.jp/) の展覧会情報を Notion のデータベースに登録するChrome の拡張機能です。
-- 登録した展覧会情報をタイムライン表示して会期などをわかりやすく可視化できます。
+- 登録した展覧会情報をタイムライン表示で管理することができます。
 
 ![App image](images/notion_artscape.png)
 ## DEMO
