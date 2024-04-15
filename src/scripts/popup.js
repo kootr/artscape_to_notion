@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   saveButtonApi.addEventListener('click', () => {
     const ApiKey = inputElementApi.value;
     chrome.storage.local.set({ ApiKey }, () => {
-      console.log('Value is set to ' + ApiKey);
+      // console.log('Value is set to ' + ApiKey);
       savedInputApi.textContent = ApiKey;
     });
     inputElementApi.value = '';
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   saveButtonDb.addEventListener('click', () => {
     const DBID = inputElementDb.value;
     chrome.storage.local.set({ DBID }, () => {
-      console.log('Value is set to ' + DBID);
+      // console.log('Value is set to ' + DBID);
       savedInputDb.textContent = DBID;
     });
     inputElementDb.value = '';

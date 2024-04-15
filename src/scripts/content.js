@@ -1,17 +1,16 @@
 chrome.storage.local.get(["ApiKey", "DBID"], (result) => {
   NOTION_TOKEN = result.ApiKey || "";
   DATABASE_ID = result.DBID || "";
-  console.log(NOTION_TOKEN);
-  console.log(DATABASE_ID);
+  // console.log(NOTION_TOKEN);
+  // console.log(DATABASE_ID);
   // TODO: 値がストレージに保存されていない場合はエラーメッセージを表示し、保存されている場合はmain関数をここで実行する
 });
 
 function main() {
-  let exhibitions = document.querySelectorAll("div.exhiBody");
+  let exhibitions = document.querySelectorAll(".item-article.item-exhibitions");
 
   for (let i = 0; i < exhibitions.length; i++) {
     let exhibition = exhibitions[i];
-
     // button要素を作成
     let button = document.createElement("input");
     button.type = "button";
@@ -19,18 +18,16 @@ function main() {
 
     // イベントリスナーを追加
     button.addEventListener("click", function () {
-      let title = this.closest(".exhiBody")
-        .querySelector("h3.headH3D")
+      let title = exhibition
+        .querySelector("h3.article-title a span")
         .textContent.trim();
       let museum = exhibition
-        .querySelector("ul.infoList.on li span")
+        .querySelector("h3.article-title + p")
         .textContent.trim();
-      let Date = exhibition.querySelector("p.exhiDate").textContent.trim();
-      console.log(Date);
+      let Date = exhibition.querySelector("h3.article-title + p + p").textContent.trim();
 
       addItem(title, museum, Date);
     });
-
     // buttonを要素に追加
     let element = document.createElement("table");
     element.appendChild(button);
@@ -59,7 +56,6 @@ function formatDate(Date) {
 
 async function addItem(title, museum, Date) {
   // chrome.runtimeを介してbackground.jsへNotion APIリクエストを送る
-  console.log(Date);
   let [formattedStartDate, formattedEndDate] = formatDate(Date);
   chrome.runtime.sendMessage(
     {

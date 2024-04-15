@@ -7,7 +7,7 @@
       "default_popup": "popup.html"
     },
     "content_scripts": [{
-      "matches": ["https://artscape.jp/exhibition/schedule/*"],
+      "matches": ["https://artscape.jp/exhibitions/*"],
       "js": [
         "scripts/content.js"
       ]
