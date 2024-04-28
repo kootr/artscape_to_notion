@@ -11,20 +11,21 @@ function main() {
 
   for (let i = 0; i < exhibitions.length; i++) {
     let exhibition = exhibitions[i];
-    // button要素を作成
     let button = document.createElement("input");
     button.type = "button";
     button.value = "Notion登録";
 
-    // イベントリスナーを追加
     button.addEventListener("click", function () {
       let title = exhibition
         .querySelector("h3.article-title a span")
         .textContent.trim();
+      console.log(title)
       let museum = exhibition
         .querySelector("h3.article-title + p")
         .textContent.trim();
+      console.log(museum)
       let Date = exhibition.querySelector("h3.article-title + p + p").textContent.trim();
+      console.log(Date)
 
       addItem(title, museum, Date);
     });
@@ -78,18 +79,16 @@ async function addItem(title, museum, Date) {
             ],
           },
           Date: {
-            // 列名
             date: {
               start: `${formattedStartDate}`,
               end: `${formattedEndDate}`,
             },
           },
           Museum: {
-            // 列名
             multi_select: [{ name: museum }],
           },
           endDate: {
-            // 列名 終了日順にソートするために必要
+            // 終了日順にソートするために必要
             date: {
               start: `${formattedEndDate}`,
               end: null,
