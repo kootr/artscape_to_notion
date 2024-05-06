@@ -19,13 +19,10 @@ function main() {
       let title = exhibition
         .querySelector("h3.article-title a span")
         .textContent.trim();
-      console.log(title)
       let museum = exhibition
         .querySelector("h3.article-title + p")
         .textContent.trim();
-      console.log(museum)
       let Date = exhibition.querySelector("h3.article-title + p + p").textContent.trim();
-      console.log(Date)
 
       addItem(title, museum, Date);
     });
@@ -67,30 +64,27 @@ async function addItem(title, museum, Date) {
           database_id: DATABASE_ID,
         },
         properties: {
-          Title: {
-            // 列名
+          "Title": {
             title: [
               {
                 text: {
-                  // "content": "クリスチャン・ディオール、 夢のクチュリエ"
                   content: title,
                 },
               },
             ],
           },
-          Date: {
-            date: {
-              start: `${formattedStartDate}`,
-              end: `${formattedEndDate}`,
-            },
-          },
           Museum: {
             multi_select: [{ name: museum }],
           },
-          endDate: {
-            // 終了日順にソートするために必要
+          Date: {
             date: {
-              start: `${formattedEndDate}`,
+              start: formattedStartDate,
+              end: formattedEndDate,
+            },
+          },
+          endDate: {
+            date: {
+              start: formattedEndDate,
               end: null,
             },
           },
