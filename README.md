@@ -9,7 +9,7 @@
 ## How to Use 
 1. このレポジトリをクローンする。(拡張機能ストアでの公開予定)
 1. Chrome の拡張機能に登録する。([Ref](https://support.google.com/chrome/a/answer/2714278?hl=ja))
-1. @kootr 作成の[データベースのテンプレート](https://kootr.notion.site/83084a288bd14d8192a68273863ee110?v=3de43fd198444b7d89c4591baf2b6e4a&pvs=4)を自分のNotionページに複製する。![App image](images/duplicate_database.png)
+1. @kootr 作成の[データベースのテンプレート](https://kootr.notion.site/bf79b58082f8471ab92c8b65a0bc7676?v=b907eca4c4d549e08b867831218f0152)を自分のNotionページに複製する。![App image](images/duplicate_database.png)
 ![App image](images/popup.png)
 1. 内部インテグレーションの作成
     https://www.notion.so/my-integrations から作成できます。権限の設定などは以下の通り。
