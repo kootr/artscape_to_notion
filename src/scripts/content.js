@@ -93,7 +93,6 @@ async function addItem(title, museum, Date) {
     },
     (response) => {
       if (response.success) {
-        console.log("データがNotionに追加されました。");
         let properties = response.json_response.properties;
         let period = properties.Date.date;
         let museum = properties.Museum.multi_select[0].name;
