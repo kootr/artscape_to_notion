@@ -7,10 +7,25 @@ chrome.storage.local.get(["ApiKey", "DBID"], (result) => {
 });
 
 function main() {
-  let exhibitions = document.querySelectorAll(".item-article.item-exhibitions");
+  let currentUrl = window.location.href;
+  let exhibitions = null;
 
-  for (let i = 0; i < exhibitions.length; i++) {
-    let exhibition = exhibitions[i];
+  console.log(currentUrl)
+  if (currentUrl.includes("artexhibition.jp/exhibitions")) {
+    console.log("bijutsunavi")
+    exhibitions = document.querySelectorAll(".article-detail")
+    console.log("exhibitions: " + exhibitions)
+  } else if (currentUrl.includes("artscape.jp/exhibition")){
+    console.log("artscape")
+    exhibitions = document.querySelectorAll(".item-article.item-exhibitions");
+    console.log(exhibitions)
+  }
+  
+  if (exhibitions) {
+    // console.log(exhibitions)
+  for (let exhibition of exhibitions) {
+    // let exhibition = exhibitions[i];
+    // console.log("esttsetaadsfadf" + exhibition)
     let button = document.createElement("input");
     button.type = "button";
     button.value = "Notion登録";
@@ -31,7 +46,7 @@ function main() {
     element.appendChild(button);
     exhibition.appendChild(element);
   }
-}
+}}
 
 function formatDate(Date) {
   // const Date = "2023年02月11日～2023年05月06日（予約制）"; Example 1
