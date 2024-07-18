@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     inputElementDb.value = '';
   });
   
-  // 保存されている値をボックスに表示する
   chrome.storage.local.get(['ApiKey', 'DBID'], (result) => {
     savedInputApi.textContent = '*****' + result.ApiKey.slice(-5,) || '';
     savedInputDb.textContent = '*****' + result.DBID.slice(-5,) || '';

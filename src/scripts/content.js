@@ -53,7 +53,6 @@ function formatDate(Date) {
 }
 
 async function addItem(title, museum, Date) {
-  // chrome.runtimeを介してbackground.jsへNotion APIリクエストを送る
   let [formattedStartDate, formattedEndDate] = formatDate(Date);
   chrome.runtime.sendMessage(
     {
