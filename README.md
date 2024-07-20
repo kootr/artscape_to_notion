@@ -26,7 +26,6 @@
 1. 登録したい展覧会の「Notion登録」 ボタンをクリックする。
 ![App image](images/example.png)
 
-
 ## 補足
 - 並び替え順序を以下のように設定するとタイムラインがより見やすくなります。
 ![App image](images/sorting.png)
