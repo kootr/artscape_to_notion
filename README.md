@@ -22,12 +22,12 @@
     ![App image](images/internal_integration5.png)
 1. Database ID の取得　データベースのURLは以下のようになっており、URLの一部の32桁の文字列をコピーする。`https://www.notion.so/[ドメイン名]/[DATABASE ID(32桁の文字列)]?v=[VIEW ID] `
 1. 拡張機能のアイコンをクリックして、Notionの内部インテグレーションのAPI keyと上でコピーしたデータベースのDatabase ID を登録する。 （内部インテグレーションの作成は少し難しいかもしれませんが、以下で分からなければ手順を紹介しているブログなど色々ありますのでそちらを参考に設定してください）
-1. 拡張機能を有効にしたChrome ブラウザで artscape の展覧会情報ページ(https://artscape.jp/exhibition/schedule/ 以下)にアクセスする。
+1. 拡張機能を有効にしたChromeブラウザで artscape の展覧会情報ページ(https://artscape.jp/exhibition/schedule/ 以下)にアクセスする。
 1. 登録したい展覧会の「Notion登録」 ボタンをクリックする。
 ![App image](images/example.png)
 
 ## 補足
-- 並び替え順序を以下のように設定するとタイムラインがより見やすくなります。
+- 並び替え順序を以下のように設定するとタイムラインが見やすくなります。
 ![App image](images/sorting.png)
 
 ## 注意
